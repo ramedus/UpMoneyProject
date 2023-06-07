@@ -1,0 +1,43 @@
+﻿@model IEnumerable<UpMoneyProjesi.Models.Budget>
+
+@{
+    ViewData["Title"] = "EditBudget";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table class="table"style="margin-left: 288px; margin-top: 91px;">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Budget1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BudgetType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Budget1)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BudgetType.ExpensesName)
+                </td>
+                <td>
+                    <form asp-action="EditBudget" asp-route-id="@item.BudgetId" method="post" onsubmit="return confirm('Are you sure you want to delete this budget?');">
+                        <button type="submit" class="btn btn-link" style=" margin-right: 50px;">Delete</button>
+                    </form>
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

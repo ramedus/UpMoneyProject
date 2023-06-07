@@ -1,0 +1,46 @@
+﻿@model IEnumerable<UpMoneyProjesi.Models.Wallet>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="form-head mb-sm-5 mb-3 d-flex align-items-center flex-wrap" style="margin-left: 288px; margin-top: 91px;">
+    <h2 class="font-w600 mb-0 me-auto mb-2 text-black" style="margin-top: 41px;">My Wallet</h2>
+    <a asp-controller="Wallets" asp-action="CreateWallet" style=" margin-right: 20px;"> Add Wallet</a>
+</div>
+<div class="col-xl-12">
+    <div class="card" style="margin-left: 288px; margin-top: -26px;">
+        <div class="card-body">
+            <div class="row align-items-end">
+                <div class="col-xl-6 col-lg-12 col-xxl-12">
+                    <div class="row">
+                        <div class="col-sm-6">
+
+
+                            <div class="mb-4">
+                                <p class="mb-2">Income</p>
+                                <h4 class="text-black" style="font-size: 24px;">@ViewData["balance"]</h4>
+                            </div>
+                            <div class="mb-4">
+                                <p class="mb-2">Expenses</p>
+                                <h4 class="text-black">@ViewData["expenses"]</h4>
+                            </div>
+                            <div class="mb-4">
+                                <p class="mb-2">Subscribes</p>
+                                <h4 class="text-black">@ViewData["subscribe"]</h4>
+                            </div>
+                            <div class="mb-4">
+                                <p class="mb-2">Budget</p>
+                                <h4 class="text-black">@ViewData["budget"]</h4>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
